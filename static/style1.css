@@ -1,0 +1,137 @@
+#i {
+
+    background-color:#f2bc94;
+    color: #00154F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+   
+}
+.split {
+    height: 90%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 75px;
+    overflow-x: hidden;
+    padding-top: 2px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color:#00154F;
+    color:white;
+    
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color:#f4af1b;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-left: 10px;
+    margin-top: 10vh;
+   
+}
+
+button {
+    padding: 20px 80px;
+    margin: 30px auto 0;
+    background-color:  #80f6bb;
+    color:#631e12;
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin-top: 1vh;
+
+}
+
+#bn:hover {
+    transition: 0.3s;
+    text-decoration: underline;
+    background-color: #f4af1b;
+    color: #2E1263;
+}
+
+#bn1:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+  background-color: #2E1263;
+  color:  #f4af1b;
+}
+
+#btn1:hover {
+  transition: 0.3s;
+  text-decoration: underline;
+  background-color: #f4af1b;
+  color:  #2E1263;
+  padding: 2em 1.5em;
+}
+
+#btn:hover {
+transition: 0.3s;
+text-decoration: underline;
+background-color: #2E1263;
+color: #f4af1b;
+padding: 2em 1.5em;
+}
+
+
+p{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    
+}
+
+
+  
+form ::-webkit-file-upload-button{
+    
+    padding: 10px;
+    background-color:  #9a80f6;
+    color:#631219;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    outline: none;
+}
+input[type='file']{
+    padding: 10px;
+}
+
+body {
+  font-family: 'Abel', sans-serif;
+  font-size: 22px;
+}

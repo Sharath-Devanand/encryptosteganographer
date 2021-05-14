@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>ESG</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css')}}">
+  <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='favicon.ico')}}"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+   <div id="i">
+      <h1>
+        EncryptoSteganographer
+     </h1>
+    </div>
+    
+    
+    <div class="split left">
+        <div class="centered">
+          <label><h1>Encryption Part</h1></label>
+            <form enctype="multipart/form-data" method="POST" action="\b" alt="form">
+                <label>HostImage:</label>
+                <img class="img-fluid" id="a" >
+                <input type="file" name="file" id="file" accept="image/png" alt="imageacceptor">
+                <label>Key(Exactly 16 characters):</label>
+                <input type="password" name="key" alt="textinput" maxlength="16" minlength="16">
+                <label>Text to be encrypted:</label>
+                <textarea name="InputMess" cols="5" rows="5" alt="textarea"></textarea>
+                <button type="submit" id="bn">Encrypt</button>
+                <h3>{{ message }}</h3>
+              </form>
+              {%if(showBtN1)%}
+
+              <img class="img-fluid" id="c" src="{{img or ''}}">
+              <h6>The encrypted image will always be in PNG format for lossless compression</h6>
+              <a id="btn1" download="encrypted.png" href="{{img or ''}}" >Download</a>
+              {%endif%}
+
+        </div>
+      </div>
+      
+      <div class="split right">
+        <div class="centered">
+            <label><h1>Decryption Part</h1></label>
+            <form enctype="multipart/form-data" method="POST" action="\g" alt="form">
+                <label>EncryptedImage:</label>
+                <img class="img-fluid" id="b">
+                 <input type="file" name="image1" id="file1" accept="image/png" alt="imageacceptor">
+                 <label>Key(Exactly 16 characters):</label>
+                 <input type="password" name="key1" alt="textinput" maxlength="16" minlength="16">
+                 <button type="submit" id="bn1">Decrypt</button>
+                 <label>Decrypted Text:</label>
+                 <textarea name="OutputMess" id="txta" cols="5" rows="5" alt="textarea" readonly>{{text or ''}}</textarea>
+               </form>
+               {%if(showBtN or False)%}
+               <a id="btn">Download</a>
+               {%endif%}
+        </div>
+      </div>
+ 
+  <script src="static/b.js"></script>
+</body>
+</html> 
