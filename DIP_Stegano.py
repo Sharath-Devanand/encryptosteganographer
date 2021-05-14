@@ -29,6 +29,7 @@ def modifyPixel(pixel, data):
             for k in range (0,3):
                 pix.append(pixels_range[c][k])
 
+
         for j in range(0, 8):
             if (datalist[i][j] == '0' and pix[j]% 2 != 0):
                 pix[j] -= 1
@@ -39,10 +40,9 @@ def modifyPixel(pixel, data):
                 else:
                     pix[j] += 1
  
-        # Eighth pixel of every set tells
+        # 3rd value  of 3rd pixel  tells
         # whether to stop ot read further.
-        # 0 means keep reading; 1 means thec
-        # message is over.
+        # 0 means keep reading; 1 means the message is over.
         if (i == lendata - 1):
             if (pix[-1] % 2 == 0):
                 if(pix[-1] != 0):
@@ -62,9 +62,7 @@ def modifyPixel(pixel, data):
 
 # Encode data into image
 def encode(data,img):
-    image = cv2.imread(img)
-    newimg = image
-
+    newimg = img
     w = newimg.shape[0]
     (x, y) = (0, 0)
  
@@ -80,7 +78,7 @@ def encode(data,img):
 
 # Decode the data in the image
 def decode(img):
-    image = cv2.imread(img)
+    image=img
     data = ''
     W=image.shape[0]
     (x,y)=(0,0)
@@ -94,13 +92,12 @@ def decode(img):
             else:
                 pixels_range.append(image[x,y])
                 x=x+1
-
         pix=[]
         for c in range (0,3):
             for k in range (0,3):
                 pix.append(pixels_range[c][k])
         
-        # string of binary data
+        
         binstr = ''
  
         for i in pix[:8]:
@@ -112,7 +109,3 @@ def decode(img):
         data += chr(int(binstr, 2))
         if (pix[-1] % 2 != 0):
             return data
-
-
-
-
