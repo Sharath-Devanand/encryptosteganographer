@@ -54,6 +54,9 @@ def decryptor():
         return (render_template('b.html',text=z,showBtN=True))
     else:
         return (redirect(url_for('encryptor')))
+@app.route('/', methods = ["GET"])
+def landing():
+    return (redirect(url_for('encryptor')))
 
 if __name__ == "__main__":
     app.run(port= 1000, debug=True)
